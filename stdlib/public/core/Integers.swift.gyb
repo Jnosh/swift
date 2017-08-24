@@ -892,9 +892,13 @@ def unsafeOperationComment(operator):
   /// Returns the sum of this value and the given value without checking for
   /// arithmetic overflow.
   ///
-  /// If an arithmetic overflow occurs, the behavior is undefined. Use this
-  /// function only to avoid the cost of overflow checking when you are sure
-  /// that the operation won't overflow.
+  /// Use this function only to avoid the cost of overflow checking when you are
+  /// certain that the operation won't overflow. In optimized builds (`-O`) the
+  /// compiler is free to assume that overflow won't occur and failure to
+  /// satisfy that assumption is a serious programming error.
+  ///
+  /// In debug builds (`-Onone`) a check is still performed and a runtime error
+  /// triggered if the operation overflows.
   ///
   /// - Parameter rhs: The value to add to this value.
   /// - Returns: The sum of this value and `rhs`.
@@ -903,9 +907,13 @@ def unsafeOperationComment(operator):
   /// Returns the difference of this value and the given value without checking
   /// for arithmetic overflow.
   ///
-  /// If an arithmetic overflow occurs, the behavior is undefined. Use this
-  /// function only to avoid the cost of overflow checking when you are sure
-  /// that the operation won't overflow.
+  /// Use this function only to avoid the cost of overflow checking when you are
+  /// certain that the operation won't overflow. In optimized builds (`-O`) the
+  /// compiler is free to assume that overflow won't occur and failure to
+  /// satisfy that assumption is a serious programming error.
+  ///
+  /// In debug builds (`-Onone`) a check is still performed and a runtime error
+  /// triggered if the operation overflows.
   ///
   /// - Parameter rhs: The value to subtract from this value.
   /// - Returns: The difference of this value and `rhs`.
@@ -914,9 +922,13 @@ def unsafeOperationComment(operator):
   /// Returns the product of this value and the given value without checking
   /// for arithmetic overflow.
   ///
-  /// If an arithmetic overflow occurs, the behavior is undefined. Use this
-  /// function only to avoid the cost of overflow checking when you are sure
-  /// that the operation won't overflow.
+  /// Use this function only to avoid the cost of overflow checking when you are
+  /// certain that the operation won't overflow. In optimized builds (`-O`) the
+  /// compiler is free to assume that overflow won't occur and failure to
+  /// satisfy that assumption is a serious programming error.
+  ///
+  /// In debug builds (`-Onone`) a check is still performed and a runtime error
+  /// triggered if the operation overflows.
   ///
   /// - Parameter rhs: The value to multiply by this value.
   /// - Returns: The difference of this value and `rhs`.
@@ -925,9 +937,13 @@ def unsafeOperationComment(operator):
   /// Returns the quotient of dividing this value by the given value without
   /// checking for arithmetic overflow.
   ///
-  /// If an arithmetic overflow occurs, the behavior is undefined. Use this
-  /// function only to avoid the cost of overflow checking when you are sure
-  /// that the operation won't overflow.
+  /// Use this function only to avoid the cost of overflow checking when you are
+  /// certain that the operation won't overflow. In optimized builds (`-O`) the
+  /// compiler is free to assume that overflow won't occur and failure to
+  /// satisfy that assumption is a serious programming error.
+  ///
+  /// In debug builds (`-Onone`) a check is still performed and a runtime error
+  /// triggered if the operation overflows.
   ///
   /// - Parameter rhs: The value to divide this value by.
   /// - Returns: The quotient of dividing this value by `rhs`.
